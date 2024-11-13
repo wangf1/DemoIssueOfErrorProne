@@ -8,8 +8,6 @@ Run the following command to build the project:
 
 Then you will see error:
 
-In Markdown, you can’t natively "collapse" code blocks, but you can create a collapsible section with HTML tags:
-
 <details>
   <summary>Click to expand</summary>
 
@@ -86,3 +84,8 @@ Then you will see:
 This is expected, as the RestrictedApiApplication.java file contains a restricted method.
 
 Uncomment out the `@EnableAccessRestrictedApi` annotation in the RestrictedApiApplication.java file, and run `mvn clean install` again, build will succeed.
+
+# Should not be Maven issue
+
+If you comment out `<arg>-Xplugin:ErrorProne</arg>` from the pom.xml file, build will succeed. This demonstrates that the issue is not with Maven, since Maven can pickup
+`-Xplugin:ErrorProne` compiler argument.
